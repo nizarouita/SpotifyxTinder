@@ -1,0 +1,136 @@
+.swipe-screen {
+  width: 100%;
+  max-width: 380px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.swipe-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #121212;
+  align-self: flex-start;
+  margin: 0 0 20px;
+}
+
+.swipe-status {
+  text-align: center;
+  color: #B3B3B3;
+}
+
+.swipe-card {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  background: #121212;
+  border: 1px solid border;
+  border-radius: 12px;
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  touch-action: none;
+  cursor: grab;
+  user-select: none;
+  transition: transform 0.05s linear;
+}
+
+.swipe-card:active {
+  cursor: grabbing;
+}
+
+.swipe-card-label {
+  position: absolute;
+  top: 20px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #1DB954;
+}
+
+.swipe-card-title {
+  font-family:  var(--font-mono);
+  font-size: 28px;
+  font-weight: 600;
+  margin: 0 0 6px;
+  color: #1DB954;
+}
+
+.swipe-card-artist {
+  font-family:  var(--font-mono);
+  color: #B3B3B3;
+  margin: 0 0 16px;
+  font-size: 15px;
+}
+
+.swipe-card-meta {
+  display: flex;
+  gap: 12px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: #B3B3B3;
+}
+
+.swipe-actions {
+  display: flex;
+  gap: 20px;
+  margin-top: 28px;
+}
+
+.swipe-btn {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: 1px solid #121212;
+  background: #121212;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+
+.swipe-btn.dislike {
+  color: #1DB954;
+}
+
+.swipe-btn.dislike:hover {
+  border-color: #1DB954;
+}
+
+.swipe-btn.like {
+  color: #1DB954;
+}
+
+.swipe-btn.like:hover {
+  border-color: #1DB954;
+}
+
+.swipe-card-art {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #000000;
+  margin-bottom: 20px;
+}
+
+.swipe-card-art img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.swipe-card-art-fallback {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #121212;
+  font-size: 48px;
+}
