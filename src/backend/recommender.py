@@ -45,4 +45,4 @@ class Knn:
         self.next_song = candidate_ids[min_idx[0]]
         t6 = time.time()
 
-        # print(f"db queries: {t1-t0:.3f}s | idx lookup: {t2-t1:.3f}s | mask build: {t3-t2:.3f}s | array slicing: {t4-t3:.3f}s | cdist: {t5-t4:.3f}s | argmin: {t6-t5:.3f}s")
+        #print(f"db queries: {t1-t0:.7f}s | idx lookup: {t2-t1:.7f}s | mask build: {t3-t2:.7f}s | array slicing: {t4-t3:.7f}s | cdist: {t5-t4:.7f}s | argmin: {t6-t5:.7f}s")

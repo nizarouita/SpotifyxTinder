@@ -10,6 +10,7 @@ import time
 
 def get_artwork_url(track_name, artist_name):
     try:
+        
         response = requests.get(
             "https://itunes.apple.com/search",
             params={
@@ -27,7 +28,8 @@ def get_artwork_url(track_name, artist_name):
             if artwork_url:
                 
                 return artwork_url.replace("100x100", "600x600")
-
+        
+        
         return None
     except requests.RequestException:
         return None
@@ -102,8 +104,10 @@ def get_next_song():
     if next_song is None:
         return jsonify({"error": "Song not found"}), 404
     song_data = next_song.to_json()
+    t1=time.time()
     song_data["artworkUrl"] = get_artwork_url(next_song.track_name, next_song.artists)
-    
+    t2=time.time()
+    #print(f"apple music artwork response: {t2-t1:.3f}s")
     return jsonify(song_data)
     
 

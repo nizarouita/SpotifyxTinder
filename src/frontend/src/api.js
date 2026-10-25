@@ -1,4 +1,4 @@
-const BASE_URL = '/api'; // adjust to match your Flask server's host/port
+const BASE_URL = '/api'; 
 
 async function request(path, options = {}) {
   const res = await fetch(`${BASE_URL}${path}`, {
