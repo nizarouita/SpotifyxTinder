@@ -5,11 +5,11 @@ A full-stack music recommendation web app: pick 3 songs you like, then swipe thr
 
 | Search | Selection | Swipe |
 |---|---|---|
-| ![Search](docs/screenshots/01-song-search.png) | ![Selection](docs/screenshots/02-song-selection.png) | ![Swipe card](docs/screenshots/03-swipe-card.png) |
+| ![Search](docs/01-song-search.png) | ![Selection](docs/02-song-selection.png) | ![Swipe card](docs/03-swipe-card.png) |
 
 | Swipe right | Swipe left |
 |---|---|
-| ![Swipe right](docs/screenshots/04-swipe-right-animation.png) | ![Swipe left](docs/screenshots/04-swipe-left-animation.png) |
+| ![Swipe right](docs/04-swipe-right-animation.png) | ![Swipe left](docs/04-swipe-left-animation.png) |
 
 ## Features
 
@@ -39,8 +39,8 @@ A full-stack music recommendation web app: pick 3 songs you like, then swipe thr
 Tested with Python 3.12.7 and Node v24.19.0.
 
 ```bash
-git clone https://github.com/TODO-USERNAME/TODO-REPO-NAME.git
-cd TODO-REPO-NAME
+git clone https://github.com/nizarouita/SpotifyxTinder.git
+cd SpotifyxTinder
 ```
 
 **1. Backend** (start it first)
@@ -73,13 +73,13 @@ src/
 │   ├── main.py                  # Flask app and API routes
 │   ├── recommender.py           # Nearest-neighbour recommendation
 │   ├── data.py                  # Data cleaning, deduplication, scaling
+│   ├── data.ipynb
 │   ├── models.py                # SQLAlchemy models
 │   ├── config.py
 │   └── dataset_merged_raw.csv   # Merged source datasets
 └── frontend/
     └── src/                     # React components, hooks, API client
 docs/
-└── screenshots/
 ```
 
 ## Data
