@@ -9,7 +9,7 @@ A full-stack music recommendation web app: pick 3 songs you like, then swipe thr
 
 | Swipe right | Swipe left |
 |---|---|
-| ![Swipe right](docs/04-swipe-right-animation.png) | ![Swipe left](docs/04-swipe-left-animation.png) |
+| ![Swipe right](docs/04-swipe-right-animation.png) | ![Swipe left](docs/05-swipe-left-animation.png) |
 
 ## Features
 
