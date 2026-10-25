@@ -2,7 +2,7 @@ import pandas as pd
 from sklearn.preprocessing import StandardScaler
 
 class Data:
-    def __init__(self, path='merged_dataset.csv'):
+    def __init__(self, path='dataset_merged_raw.csv'):
         self.path = path
         self.df = pd.read_csv(self.path, low_memory=False)
         self.df = self.df.drop(columns='Unnamed: 0', errors='ignore')
@@ -16,21 +16,6 @@ class Data:
                          'speechiness', 'acousticness', 'instrumentalness',
                          'liveness', 'valence', 'tempo']
 
-        # ids = list(self.df['track_id'])
         self.scaler = StandardScaler()
         self.df[feature_cols] = self.scaler.fit_transform(self.df[feature_cols])
-        # if len(ids)==len(scaled_values):
-        #     for i in range(len(ids)):
-        #         self.X[ids[i]]=scaled_values[i]
-        #         self.Y[ids[i]]=self.df[self.df['track_id']==ids[i]]['score'].values[0]
-        # else:
-        #     raise KeyError("mismatch between ids and scaled values")  
-        # return self.X
-
-    # def get_info(self, id):
-    #     descr_cols = ['track_id', 'artists', 'album_name', 'track_name']
-    #     df = self.df[descr_cols][self.df['track_id']== id]
-    #     return df.iloc[0].tolist()
-
-    # def df_to_dic(self):
-    #     return self.Y
+        

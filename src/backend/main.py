@@ -1,7 +1,7 @@
 from flask import request, jsonify
 from config import app,db
 from models import LikedSong
-from main_algo import Knn
+from recommender import Knn
 from data import Data
 import pandas as pd
 import requests
@@ -25,22 +25,21 @@ def get_artwork_url(track_name, artist_name):
         if data.get("resultCount", 0) > 0:
             artwork_url = data["results"][0].get("artworkUrl100")
             if artwork_url:
-                # upscale from 100x100 to 600x600
+                
                 return artwork_url.replace("100x100", "600x600")
 
         return None
     except requests.RequestException:
         return None
 
-# Algo = Knn()
+
 
 with app.app_context():
         t0 = time.time()
         data = Data()
         data.scale()
         df = data.df
-        # print(df.shape)
-        #          # print(df.head())
+
         
         df.to_sql('liked_song', db.engine, if_exists='replace', index=False)
         db.session.execute(db.text('CREATE INDEX IF NOT EXISTS ix_liked_song_score ON liked_song (score)'))
@@ -111,12 +110,6 @@ def get_next_song():
 if __name__ == "__main__":
     with app.app_context():
         db.create_all()
-        # data = Data()
-        # data.scale()
-        # df = data.df
-        # # print(df.shape)
-        # # print(df.head())
-        # df.to_sql('liked_song', db.engine, if_exists='replace', index=False)
     app.run(host='127.0.0.1', port=5000, debug=True)
 
 

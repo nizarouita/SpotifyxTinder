@@ -12,7 +12,6 @@ class Knn:
                  'speechiness', 'acousticness', 'instrumentalness',
                  'liveness', 'valence', 'tempo']
 
-        # Precompute once — never rebuilt per request
         self.track_ids = df['track_id'].values
         self.feature_matrix = df[self.feature_cols].values
         self.id_to_idx = {tid: i for i, tid in enumerate(self.track_ids)}
